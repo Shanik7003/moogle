@@ -1,4 +1,4 @@
-# Moogle!
+ # Moogle!
 
 ![](moogle.png)
 

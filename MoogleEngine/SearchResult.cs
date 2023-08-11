@@ -14,9 +14,7 @@ public class SearchResult
         this.Suggestion = suggestion;
     }
 
-    public SearchResult() : this(new SearchItem[0]) {
-
-    }
+    public SearchResult() : this(new SearchItem[0]) {}
 
     public string Suggestion { get; private set; }
 
