@@ -18,12 +18,12 @@ public static class Moogle
         for (int i = 0; i < Query.Length; i++)
         {
             for (int k = 0; k < Texts_Score.Length; k++)
-            {
+            {               
                 if(Operators.importance.ContainsKey(Query[i]))
                 {
                     Texts_Score[k] += (float)Math.Pow(ModificarTexto.TFxIDF[Query[i]][k],Operators.importance[Query[i]]);
-                }
-                Texts_Score[k] += ModificarTexto.TFxIDF[Query[i]][k];
+                }              
+                    Texts_Score[k] += ModificarTexto.TFxIDF[Query[i]][k];               
             }
         }
         //snippet de los textos dada la palabra con mas tfxidf en el query       

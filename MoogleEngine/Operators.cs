@@ -2,7 +2,7 @@ namespace MoogleEngine
 {
     public class Operators
     {
-        public static List<char> operators = new char[] { '!', '^', '*' }.ToList();
+        public static List<char> operators = new char[] { '!', '^','*'}.ToList();
         public static  Dictionary<string,int> importance = new Dictionary<string, int>();
 
         public static Dictionary<char,List<string>> Words_with_Operator(string query)
@@ -30,8 +30,15 @@ namespace MoogleEngine
                         {
                             i++;
                         }
-                        importance.Add(query.Substring(startindex,i-startIndex+1),num_rep_imp);
-                        System.Console.WriteLine(query.Substring(startindex,i-startIndex+1));
+                        if(query[i] == ' ')
+                        {
+                           importance.Add(query.Substring(startindex,i-startIndex+1),num_rep_imp);  
+                        }
+                        if(query[i] == query.Length-1)
+                        {
+                           importance.Add(query.Substring(startindex,i-startIndex+2),num_rep_imp);
+                        }
+                                           
                     }
                     search_for_space = true;
                     op_index = i;
